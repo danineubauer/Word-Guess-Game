@@ -35,23 +35,13 @@
         console.log(compWordChoice);
         console.log(compWordChoice.length);
 
+
         var underScore = [];
 
-        //create underscores based on length of word: 
-        // function typeUnderscores() {
-        //     for (let i = 0; i < compWordChoice.length; i++) { 
-        //         underScore.push("_");
-        //     };
-        //     return underScore;
-        // };
-
-        // console.log(typeUnderscores());
-
-        //Creates spaces! 
-
+        //Creates underscores and spaces between them: 
         function typeUnderscores() {
-            for (let i = 0; i < compWordChoice.length; i++) { 
-                if (compWordChoice[i] === " "){
+            for (let i = 0; i < compWordChoice.length; i++) {
+                if (compWordChoice[i] === " ") {
                     underScore.push(" ");
                 } else {
                     underScore.push("_");
@@ -62,10 +52,12 @@
 
         console.log(typeUnderscores());
 
-
-
-
         //get user guess: 
+        document.addEventListener('keypress', (event) => {
+            var keycode = event.keyCode;
+            var keyword = String.fromCharCode(keycode);
+            console.log(keyword);
+        });
 
 
         //check if guess is right: 
