@@ -1,32 +1,57 @@
 <!DOCTYPE html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Word Guess Game</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Word Guess Game</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
 
-        <h1 id="starter">Press any key to get started!</h1> 
-        
-        <h1 id=underscores> _ _ _ _ _ _ </h1>   
-        <div class="rightGuess"></div>
-        <div class="wrongGuess"></div>
-        
-        <h2 id="wins">Wins:</h2>
-        <h2>Number of guesses remaining:</h2>
-        <h2>Letters already guessed:</h2>
+<body>
 
-        
+    <h1 id="starter">Press any key to get started!</h1>
 
-        <script src="assets/javascript/game.js" async defer>
-        
-        
-        
-        
-        </script>
-    </body>
+    <h1 id=underscores> _ _ _ _ _ _ </h1>
+    <div class="rightGuess"></div>
+    <div class="wrongGuess"></div>
+
+    <h2 id="wins">Wins:</h2>
+    <h2>Number of guesses remaining:</h2>
+    <h2>Letters already guessed:</h2>
+
+
+
+    <script>
+
+        //array of words: 
+        var wordChoice = ["San Francisco", "Berkeley", "Oakland", "Lombard Street", "Golden Gate Bridge", "Golden Gate Park"];
+
+        //choose word:
+        var compWordChoice = wordChoice[Math.floor(Math.random() * wordChoice.length)];
+        console.log(compWordChoice);
+        console.log(compWordChoice.length);
+
+        //create underscores based on length of word: 
+        for (let index = 0; index < compWordChoice.length; index++) {
+            const wordLetters = compWordChoice[index];
+                console.log("_");
+            };
+
+        //get user guess: 
+        function userGuess(event) {
+            
+        }
+
+        //check if guess is right: 
+
+        //if guess is right, push to right array
+
+        //if guess is wrong, push to wrong array
+
+
+    </script>
+</body>
+
 </html>
