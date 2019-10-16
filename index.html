@@ -14,6 +14,7 @@
     <h1 id="starter">Press any key to get started!</h1>
 
     <h1 id="underscores"></h1>
+
     <div class="rightGuess"></div>
     <div class="wrongGuess"></div>
 
@@ -26,10 +27,6 @@
     <script>
 
 
-        var underscoreText = document.getElementById("underscores");
-
-
-
         //array of words: 
         var wordChoice = ["San Francisco", "Berkeley", "Oakland", "Lombard Street", "Golden Gate Bridge", "Golden Gate Park"];
 
@@ -38,33 +35,44 @@
         console.log(compWordChoice);
         console.log(compWordChoice.length);
 
-
+        var underScore = [];
 
         //create underscores based on length of word: 
-        function typeUnderscores(params) {
-            for (let index = 0; index < compWordChoice.length; index++) {
-                const wordLetters = compWordChoice[index];
-                return document.write("_");
+        // function typeUnderscores() {
+        //     for (let i = 0; i < compWordChoice.length; i++) { 
+        //         underScore.push("_");
+        //     };
+        //     return underScore;
+        // };
+
+        // console.log(typeUnderscores());
+
+        //Creates spaces! 
+
+        function typeUnderscores() {
+            for (let i = 0; i < compWordChoice.length; i++) { 
+                if (compWordChoice[i] === " "){
+                    underScore.push(" ");
+                } else {
+                    underScore.push("_");
+                };
             };
+            return underScore;
         };
+
+        console.log(typeUnderscores());
 
 
 
 
         //get user guess: 
-        function userGuess(event) {
 
-        }
 
         //check if guess is right: 
 
         //if guess is right, push to right array
 
         //if guess is wrong, push to wrong array
-
-
-        underscoreText.textContent = typeUnderscores();
-
 
 
     </script>
