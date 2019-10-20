@@ -13,58 +13,74 @@
 
     <h1 id="starter">Press any key to get started!</h1>
 
-    <h1 id="underscores"></h1>
-
-    <div class="rightGuess"></div>
-    <div class="wrongGuess"></div>
-
-    <h2 id="wins">Wins:</h2>
-    <h2>Number of guesses remaining:</h2>
-    <h2>Letters already guessed:</h2>
+    <h1 id="answerArray"></h1>
+    <h2 id="wins"></h2>
+    <h2 id="losses"></h2>
+    <h2 id="wrongGuess"></div>
+    <h2 id="remainingGuesses"></h2>
 
 
 
     <script>
 
 
-        //array of words: 
-        var wordChoice = ["San Francisco", "Berkeley", "Oakland", "Lombard Street", "Golden Gate Bridge", "Golden Gate Park"];
+        //Create all the nodes:
 
-        //choose word:
-        var compWordChoice = wordChoice[Math.floor(Math.random() * wordChoice.length)];
-        console.log(compWordChoice);
-        console.log(compWordChoice.length);
+        var underscoreNode = document.getElementById("answerArray");
+        var winsNode = document.getElementById("wins");
+        var lossesNode = document.getElementById("losses");
+        var wrongGuessNode = document.getElementById("wrongGuess");
+        var remainingGuessesNode = document.getElementById("remainingGuesses");
+        var alphabet = "qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM";
 
 
-        var underScore = [];
 
-        //Creates underscores and spaces between them: 
-        function typeUnderscores() {
-            for (let i = 0; i < compWordChoice.length; i++) {
-                if (compWordChoice[i] === " ") {
-                    underScore.push(" ");
+        // document.addEventListener('keypress', (event) => {
+        //     keyword = String.fromCharCode(event.keyCode);
+        //     console.log(keyword);
+
+        //Create an object with all the variables
+        var gameInProgress = true;
+        var wins = 0;
+        var losses = 0;
+        var wrongGuesses = [];
+        var underscoreArray = [];
+        var answerArray = [];
+        var words = ["lombard", "velencia", "hyde", "fillmore", "Polk", "Geary", "Haight", "Ashbury", "Embarcadero", "Market"];
+        var word = words[Math.floor(Math.random() * words.length)];
+        var remainingLetters = word.length;
+
+        for (let index = 0; index < word.length; index++) {
+            answerArray[index] = "_";
+        };
+        
+        document.onkeyup = function (event) {
+            var guess = event.key;
+            console.log(guess);
+
+            if (alphabet.includes(guess)) {
+                if ( word.includes(guess) ) { 
+                    wins++;
+                    remainingLetters--;
+                    for (let index = 0; index < word.length; index++) {
+                        answerArray[word.indexOf(guess)] = guess;
+                    };                
                 } else {
-                    underScore.push("_");
+                    wrongGuesses.push(guess);
+                    losses++; 
                 };
+                console.log("wins", wins);
+                console.log("losses", losses);
             };
-            return underScore;
+
+            underscoreNode.textContent = answerArray.join(" ");
+            underscoreNode.textContent = answerArray.join(" ");
+            winsNode.textContent = "wins: " + wins;
+            lossesNode.textContent = "losses: " + losses;
+            wrongGuessNode.textContent = "Your guesses: " + wrongGuesses.join(", ");
+            remainingGuessesNode.textContent = "You have " + remainingLetters + " to guess";
         };
 
-        console.log(typeUnderscores());
-
-        //get user guess: 
-        document.addEventListener('keypress', (event) => {
-            var keycode = event.keyCode;
-            var keyword = String.fromCharCode(keycode);
-            console.log(keyword);
-        });
-
-
-        //check if guess is right: 
-
-        //if guess is right, push to right array
-
-        //if guess is wrong, push to wrong array
 
 
     </script>
