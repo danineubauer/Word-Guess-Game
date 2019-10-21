@@ -63,6 +63,7 @@
                     wins++;
                     remainingLetters--;
                     for (let index = 0; index < word.length; index++) {
+                        if (word[index] === guess)
                         answerArray[word.indexOf(guess)] = guess;
                     };                
                 } else {
