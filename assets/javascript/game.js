@@ -120,9 +120,7 @@ const game = {
             } else if (game === 'loss') {
                 document.getElementById(
                     'end'
-                ).innerHTML = `The correct movie was ${
-                    this.strPick
-                    }!<br/><br/>Press Space to play again`;
+                ).innerHTML = `The correct movie was <br/> ${this.strPick}!<br/><br/>Press Space to play again`;
             }
         } else {
             document.getElementById('word-being-guessed').innerHTML = this.wordGuessed;
