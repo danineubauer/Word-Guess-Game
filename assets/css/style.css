@@ -4,6 +4,9 @@ body {
     font-family: 'Abril Fatface', cursive;
     font-size: 40px;
     text-shadow: 2px;
-    
+}
+
+h5 { 
+    font-size: 20px;
 }
 
