@@ -126,6 +126,7 @@ const game = {
             document.getElementById('word-being-guessed').innerHTML = this.wordGuessed;
             document.getElementById('letters-guessed').innerHTML = `Your guesses: ${this.letterGuessed}`;
             document.getElementById('numGuesses').innerHTML = `You have ${this.remainingGuesses} guesses left`;
+            document.getElementById('instructions').innerHTML = '(Figure out the Street Name by guessing letters)';
         }
     },
 
