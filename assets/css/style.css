@@ -1,9 +1,13 @@
 body { 
-    background-image: url("../images/background.jpg");
-    background-size: 100%;
+    background: url(../images/background.jpg) no-repeat center center fixed;
+    -webkit-background-size:
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     font-family: 'Abril Fatface', cursive;
-    font-size: 40px;
+    font-size: 30px;
     text-shadow: 2px;
+    margin-left: 30px;
 }
 
 h5 { 
